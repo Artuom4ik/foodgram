@@ -1,3 +1,9 @@
 from django.contrib import admin
 
-# Register your models here.
+from categories.models import Section, Group, Subgroup, Card
+
+
+admin.site.register(Section)
+admin.site.register(Group)
+admin.site.register(Subgroup)
+admin.site.register(Card)
