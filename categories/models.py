@@ -24,4 +24,13 @@ class Subgroup(models.Model):
         on_delete=models.CASCADE,
         related_name='subgroups',
         verbose_name='Группа')
-    
+
+
+class Card(models.Model):
+    title = models.CharField(max_length=200, verbose_name='Название')
+    description = models.TextField(blank=True, null=True, verbose_name='Описание')
+    subgroup = models.ForeignKey(
+        Subgroup,
+        on_delete=models.CASCADE,
+        related_name='cards',
+        verbose_name='Подгруппа')
