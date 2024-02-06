@@ -8,5 +8,5 @@ app_name = 'categories'
 
 
 urlpatterns = [
-    path('', views.render_categories_list),
+    path('', views.categories_list_api),
 ]
