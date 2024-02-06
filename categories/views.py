@@ -63,4 +63,32 @@ def detail_information_card_api(request, card_id):
                 'ensure_ascii': False,
                 'indent': 4,}
         )
+    
 
+def products_list_api(request, card_id):
+    try:
+        card = Card.objects.get(id=card_id)
+        products = {
+            'products':[{
+                'title': product.title,
+                'descriton': product.description,
+                'scope_of_application': product.scope_of_application,
+                'diametr': product.diametr,
+                'length': product.length,
+                'color': product.color,
+                'image': product.image.url if product.image else ''
+            } for product in card.products.all()]}
+
+        return JsonResponse(products, safe=False, json_dumps_params={
+            'ensure_ascii': False,
+            'indent': 4,
+        })
+    
+    except Card.DoesNotExist:
+        return JsonResponse(
+            {'Error': 'card does not exist'},
+            safe=False,
+            json_dumps_params={
+                'ensure_ascii': False,
+                'indent': 4,}
+        ) 
