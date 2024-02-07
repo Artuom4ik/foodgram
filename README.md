@@ -63,8 +63,21 @@ python manage.py loaddata fixture_name
 
 ___
 ### Эндпоинты и их функции
+В файле `urls.py` папки `foodgram` имеется такой роут:
 
+* `categories/` - данный роут имеет такие эндпоинты:
 
+В файле `urls.py` папки `categories`:
+
+* `''` - данный эндпоинт отвечает за получения списка котегорий. Вот как выгледет [функция](https://github.com/Artuom4ik/foodgram/blob/0a8b00fba0a82b106b8245f2dd6cc93d28e512b8/categories/views.py#L7-L17)
+
+* `cards_list/section/<int:section_id>/group/<int:group_id>/subgroup/<int:subgroup_id>/` - данный эндпоинт отвечает за получение списка карточек определенной секции, группы, подгруппы. Нужно передать `id` секции, группы и подгруппы вместо `<int:section_id>`, `<int:group_id>`, `<int:subgroup_id>`. Вот как выгледет [функция](https://github.com/Artuom4ik/foodgram/blob/0a8b00fba0a82b106b8245f2dd6cc93d28e512b8/categories/views.py#L20-L36).
+
+* `detail_information_card/<int:card_id>/` - данный эндпоинт отвечает за получение детальной информации о карточке товара. Нужно передать `id` карточки вместо `<int:card_id>`. Вот как выгледет [функция](https://github.com/Artuom4ik/foodgram/blob/0a8b00fba0a82b106b8245f2dd6cc93d28e512b8/categories/views.py#L39-L70).
+
+* `products_list/<int:card_id>/` - даннный эндпоинт отвечает за получение списка продуктов по определенной карточке. Нужно передать `id` карточки вместо `<int:card_id>`. Вот как выгледет [функция](https://github.com/Artuom4ik/foodgram/blob/0a8b00fba0a82b106b8245f2dd6cc93d28e512b8/categories/views.py#L73-L89).
+
+В результате перехода по этим эндпоинтам вы получаете данные в формате `json`.
 ___
 
 ### Цель проекта:
