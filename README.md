@@ -1,4 +1,4 @@
-# foodgram
+# Foodgram
 ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
 ![Linux](https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black)![macOS](https://img.shields.io/badge/mac%20os-000000?style=for-the-badge&logo=macos&logoColor=F0F0F0)![Windows](https://img.shields.io/badge/Windows-0078D6?style=for-the-badge&logo=windows&logoColor=white)
 
@@ -14,11 +14,11 @@ ___
 ##### База данных имеет 4 уровня вложенности `section-group-subgroup-card` 
 ___
 ### Содержание:
-* [Запуск]()
-* [Переменные окружения]()
-* [Как добавить данные]()
-* [Эндпоинты и их функции]()
-* [Цель проекта]()
+* [Запуск](https://github.com/Artuom4ik/foodgram?tab=readme-ov-file#%D0%B7%D0%B0%D0%BF%D1%83%D1%81%D0%BA)
+* [Переменные окружения](https://github.com/Artuom4ik/foodgram?tab=readme-ov-file#%D0%BF%D0%B5%D1%80%D0%B5%D0%BC%D0%B5%D0%BD%D0%BD%D1%8B%D0%B5-%D0%BE%D0%BA%D1%80%D1%83%D0%B6%D0%B5%D0%BD%D0%B8%D1%8F)
+* [Как добавить данные](https://github.com/Artuom4ik/foodgram?tab=readme-ov-file#%D0%BA%D0%B0%D0%BA-%D0%B4%D0%BE%D0%B1%D0%B0%D0%B2%D0%B8%D1%82%D1%8C-%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D0%B5)
+* [Эндпоинты и их функции](https://github.com/Artuom4ik/foodgram?tab=readme-ov-file#%D1%8D%D0%BD%D0%B4%D0%BF%D0%BE%D0%B8%D0%BD%D1%82%D1%8B-%D0%B8-%D0%B8%D1%85-%D1%84%D1%83%D0%BD%D0%BA%D1%86%D0%B8%D0%B8)
+* [Цель проекта](https://github.com/Artuom4ik/foodgram?tab=readme-ov-file#%D1%86%D0%B5%D0%BB%D1%8C-%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82%D0%B0)
 ___
 ### Запуск
 
