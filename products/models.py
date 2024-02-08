@@ -9,7 +9,7 @@ class Product(models.Model):
     scope_of_application = models.CharField(max_length=200, verbose_name='Сфера применения')
     diametr = models.IntegerField(verbose_name='Диаметр')
     length = models.IntegerField(verbose_name='Длинна')
-    color = models.CharField(max_length=100, null=True, verbose_name='Цвет')
+    color = models.CharField(max_length=100, default='', verbose_name='Цвет')
     image = models.ImageField(default='', verbose_name='Изображение')
     card = models.ForeignKey(
         Card,
