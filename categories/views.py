@@ -40,31 +40,15 @@ def cards_list_api(request, section_id, group_id, subgroup_id):
 
 def detail_information_card_api(request, card_id):
     card = get_object_or_404(Card, id=card_id)
-    products = card.products.all()
+    
     detail_information = {
         'title': card.title,
-        'scope_of_application': [],
-        'diameters': [],
-        'length': [],
-        'colors': [],
-        'image': ''
+        'scope_of_application': list(card.products.values_list('scope_of_application', flat=True).distinct()),
+        'diameters': list(card.products.values_list('diametr', flat=True).distinct()),
+        'length': list(card.products.values_list('length', flat=True).distinct()),
+        'colors': list(card.products.values_list('color', flat=True).distinct()),
+        'image': card.products.exclude(image__isnull=True).first().image.url
     }
-
-    for product in products:
-        if product.scope_of_application not in detail_information['scope_of_application']:
-            detail_information['scope_of_application'].append(product.scope_of_application)
-        
-        if product.diametr not in detail_information['diameters']:
-            detail_information['diameters'].append(product.diametr)
-        
-        if product.length not in detail_information['length']:
-            detail_information['length'].append(product.length)
-        
-        if product.color not in detail_information['colors']:
-            detail_information['colors'].append(product.color)
-        
-        if product.image and not detail_information['image']:
-            detail_information['image'] = product.image.url
     
     return JsonResponse(detail_information, safe=False, json_dumps_params={
         'ensure_ascii': False,
@@ -82,7 +66,7 @@ def products_list_api(request, card_id):
             'diametr': product.diametr,
             'length': product.length,
             'color': product.color,
-            'image': product.image.url if product.image else ''
+            'image': product.image.url if product.image else product.image
         } for product in card.products.all()]}
 
     return JsonResponse(products, safe=False, json_dumps_params={
